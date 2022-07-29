@@ -63,7 +63,7 @@ export default function Home() {
 			iframeTop.current = currentIframeTop;
 			iframeScale.current = currentIframeScale;
 		}
-	}, [ iframeRef.current ]);
+	}, []);
 
 	useEffect(() => {
 		const handleScroll = throttle(({ deltaY }) => {
@@ -303,7 +303,7 @@ export default function Home() {
 						<iframe
 							ref={iframeRef}
 							className={cx(
-								'absolute top-0 h-[calc(100vh-8.5rem)] w-screen rounded-lg shadow-xl will-change-transform',
+								'absolute top-0 h-[calc(100vh-8.5rem)] w-screen rounded-lg shadow-xl will-change-transform transition-transform',
 								!isIframeActive ? 'pointer-events-none' : '',
 							)}
 							id="block-editor"
